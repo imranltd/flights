@@ -1,7 +1,7 @@
 {
-  "name": "Flights search app",
+  "name": "flights-search-app",
   "version": "1.0.0",
-  "description": "Flight search demo",
+  "description": "Flight search app demo",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
