@@ -22,5 +22,10 @@
     "gulp-webserver": "^0.9.1",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.7",
+    "bootstrap": "^3.3.6",
+    "jquery": "^1.11.3"
   }
 }
