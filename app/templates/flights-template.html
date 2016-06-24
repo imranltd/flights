@@ -1,0 +1,52 @@
+
+<section>
+	<div class="form-group has-feedback input-group input-group">
+	    <label class="control-label sr-only">Search</label>
+	    <input type="search" class="form-control" placeholder="Search" data-ng-model="search" />
+	    <i class="glyphicon glyphicon-search form-control-feedback"></i>
+	</div>
+</section>
+
+<section ng-if="search">
+	<div 
+		class="btn-group-vertical"  
+		ng-repeat="flight in flights | filter:search">
+  		<button type="button" class="btn btn-default"
+  			class="btn" 
+			role="button" 
+			data-toggle="collapse" 
+			data-target="#collapseExample-{{$index}}" 
+			href="#collapseExample" 
+			aria-expanded="false" 
+			aria-controls="collapseExample">
+
+  			<span class="orange bold">
+				{{flight.departureAirport}}</span>
+					> 
+			<span class="bold">
+				{{flight.arrivalAirport}}</span>
+				 - {{flight.localDepartureTime|date:'shortTime'}}
+		</button>
+
+			<div class="collapse" id="collapseExample-{{$index}}">
+				<div class="well">
+					<p>
+						<strong>{{flight.localDepartureTime|date:'EEE dd MMM yyyy'}} </strong><br />
+						{{flight.departureAirport}} to {{flight.arrivalAirport}} <br />
+						Dep {{flight.localDepartureTime|date:'shortTime'}} - Arr {{flight.localArrivalTime|date:'shortTime'}} <br />
+						{{flight.depTerminalName}} <br />
+						Flight {{flight.flightNumber.carrierCode}}{{flight.flightNumber.number}}<br />
+						Seats available: {{flight.seatsAvailable}}<br />
+						Price:
+						<ul>
+							<li>Adult: {{flight.prices.adult.value | currency:"£"}}</li>
+							<li>Child: {{flight.prices.child.value | currency:"£"}}</li>
+							<li>Infant: {{(flight.prices.infant.value) ? '£' :''}}{{(flight.prices.infant.value) ? flight.prices.infant.value : '---'}}</li>
+						</ul>
+						Disrupted: {{(flight.isDisrupted)?'Yes':'No'}}
+					</p>
+				</div>
+			</div>
+
+</div>
+</section>
