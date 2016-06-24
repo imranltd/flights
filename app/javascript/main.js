@@ -13,10 +13,10 @@
 				console.log(response);
 		});
 	}])
-	.directive('flightsTemplate', function() {
+	.directive('flightsSearch', function() {
   		return {
   			restrict: 'E',
-    		templateUrl: 'templates/flights-template.html'
+    		templateUrl: 'templates/flights-search.html'
   		};
 	});
 }());

@@ -1,5 +1,8 @@
 
-<section>
+
+
+
+<section class="col-md-12">
 	<div class="form-group has-feedback input-group input-group">
 	    <label class="control-label sr-only">Search</label>
 	    <input type="search" class="form-control" placeholder="Search" data-ng-model="search" />
@@ -7,7 +10,7 @@
 	</div>
 </section>
 
-<section ng-if="search">
+<section ng-if="search"  class="col-md-12">
 	<div 
 		class="btn-group-vertical"  
 		ng-repeat="flight in flights | filter:search">

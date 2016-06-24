@@ -14,14 +14,23 @@
 		<script type="text/javascript" src="js/main.js"></script>
 	</head>
 	<body>
-		<div id="flights-app" class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<h1>Flight search app</h1>
-					<flights-search 
-						ng-app="flightsApp" 
-						ng-controller="flightsController">
-					</flights-search>
+		<div class="container">
+			<div  class="row">
+				<div class="col-md-5">
+					<div id="flights-app" class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Flights search app</h3>
+						</div>
+						<div class="panel-body">
+							<flights-search 
+								ng-app="flightsApp" 
+								ng-controller="flightsController">
+							</flights-search>
+						</div>
+					</div>
+
+
+
 				</div>
 			</div>
 		</div>
