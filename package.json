@@ -1,14 +1,14 @@
 {
-  "name": "flights",
+  "name": "Flights search app",
   "version": "1.0.0",
-  "description": "Flight details demo",
-  "main": "index.js",
+  "description": "Flight search demo",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "githum.com"
+    "url": "https://github.com/imranltd/flights.git"
   },
   "author": "Imran Sarwar",
   "license": "ISC",

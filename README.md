@@ -7,3 +7,5 @@ Prerequisite: nodeJS
 - then gulp
 
 The website should open in a browser
+
+Demo: http://imransarwar.co.uk/flights/

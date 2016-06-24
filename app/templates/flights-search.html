@@ -1,8 +1,4 @@
-
-
-
-
-<section class="col-md-12">
+<section>
 	<div class="form-group has-feedback input-group input-group">
 	    <label class="control-label sr-only">Search</label>
 	    <input type="search" class="form-control" placeholder="Search" data-ng-model="search" />
@@ -10,9 +6,8 @@
 	</div>
 </section>
 
-<section ng-if="search"  class="col-md-12">
-	<div 
-		class="btn-group-vertical"  
+<section ng-if="search">
+	<div class="btn-group-vertical"  
 		ng-repeat="flight in flights | filter:search">
   		<button type="button" class="btn btn-default"
   			class="btn" 
@@ -22,34 +17,30 @@
 			href="#collapseExample" 
 			aria-expanded="false" 
 			aria-controls="collapseExample">
-
   			<span class="orange bold">
 				{{flight.departureAirport}}</span>
 					> 
 			<span class="bold">
 				{{flight.arrivalAirport}}</span>
-				 - {{flight.localDepartureTime|date:'shortTime'}}
+				- {{flight.localDepartureTime|date:'shortTime'}}
 		</button>
 
-			<div class="collapse" id="collapseExample-{{$index}}">
-				<div class="well">
-					<p>
-						<strong>{{flight.localDepartureTime|date:'EEE dd MMM yyyy'}} </strong><br />
-						{{flight.departureAirport}} to {{flight.arrivalAirport}} <br />
-						Dep {{flight.localDepartureTime|date:'shortTime'}} - Arr {{flight.localArrivalTime|date:'shortTime'}} <br />
-						{{flight.depTerminalName}} <br />
-						Flight {{flight.flightNumber.carrierCode}}{{flight.flightNumber.number}}<br />
-						Seats available: {{flight.seatsAvailable}}<br />
-						Price:
-						<ul>
-							<li>Adult: {{flight.prices.adult.value | currency:"£"}}</li>
-							<li>Child: {{flight.prices.child.value | currency:"£"}}</li>
-							<li>Infant: {{(flight.prices.infant.value) ? '£' :''}}{{(flight.prices.infant.value) ? flight.prices.infant.value : '---'}}</li>
-						</ul>
-						Disrupted: {{(flight.isDisrupted)?'Yes':'No'}}
-					</p>
-				</div>
+		<div class="collapse" id="collapseExample-{{$index}}">
+			<div class="well">
+				<p>
+					<strong>{{flight.localDepartureTime|date:'EEE dd MMM yyyy'}} </strong><br />
+					{{flight.departureAirport}} to {{flight.arrivalAirport}} <br />
+					Dep {{flight.localDepartureTime|date:'shortTime'}} - Arr {{flight.localArrivalTime|date:'shortTime'}} <br />
+					{{flight.depTerminalName}} <br />
+					Flight {{flight.flightNumber.carrierCode}}{{flight.flightNumber.number}}<br />
+					<span class="orange bold">{{flight.seatsAvailable}}</span> seats available: <br />
+					<strong>Price:</strong><br />
+					Adult: {{flight.prices.adult.value | currency:"£"}}<br />
+					Child: {{flight.prices.child.value | currency:"£"}}<br />
+					Infant: {{(flight.prices.infant.value) ? '£' :''}}{{(flight.prices.infant.value) ? flight.prices.infant.value : '---'}}<br />
+					Disrupted: {{(flight.isDisrupted)?'Yes':'No'}}
+				</p>
 			</div>
-
-</div>
+		</div>
+	</div>
 </section>
