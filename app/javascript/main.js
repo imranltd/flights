@@ -1,22 +1,20 @@
 (function(){
-	var app = angular.module('flightsApp', []);
+	angular
+		.module('flightsApp', ['restangular'])
+		.config(function(RestangularProvider) {
+			RestangularProvider.setBaseUrl('http://ejtestbed.herokuapp.com');})
+		.controller('flightsController', ['$scope', 'Restangular', function($scope, Restangular){
+			var vm = $scope,
+				FlightList = Restangular.all('flights');
 
-	app.controller('flightsController', ['$scope', '$http', function($scope, $http){
-		var vm = $scope;
-		$http({
-			method: 'GET',
-			url: 'http://ejtestbed.herokuapp.com/flights'
-		})
-		.then(function successCallback(response) {
-				$scope.flights = response.data;
-		}, function errorCallback(response) {
-				console.log(response);
+				FlightList.getList()
+				.then(function(data) {
+					$scope.flights = data;
+				});}])
+		.directive('flightsSearch', function() {
+			return {
+				restrict: 'E',
+				templateUrl: 'templates/flights-search.html'
+			};
 		});
-	}])
-	.directive('flightsSearch', function() {
-  		return {
-  			restrict: 'E',
-    		templateUrl: 'templates/flights-search.html'
-  		};
-	});
 }());

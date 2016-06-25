@@ -26,6 +26,8 @@
   "dependencies": {
     "angular": "^1.5.7",
     "bootstrap": "^3.3.6",
-    "jquery": "^1.11.3"
+    "jquery": "^1.11.3",
+    "lodash": "^4.13.1",
+    "restangular": "^1.5.2"
   }
 }
